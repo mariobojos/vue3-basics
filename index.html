@@ -22,6 +22,11 @@
                 return {
                     greeting: 'Hello World!'
                 }
+            },
+            mounted() {
+                setTimeout(() => {
+                    this.greeting = 'Goodbye World!'
+                }, 3000)
             }
         }).mount('#app');
     </script>
