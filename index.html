@@ -13,10 +13,12 @@
             <h2 class="font-bold mt-2">Assignment</h2>
 
             <ul>
-                <li>Make up bed <input type="checkbox" /></li>
-                <li>Take a bath <input type="checkbox" /></li>
-                <li>East breakfast <input type="checkbox" /></li>
-                <li>Brush teeth <input type="checkbox" /></li>
+                <li v-for="assignment in assignments">
+                    <label>
+                        {{ assignment.name }}
+                        <input type="checkbox" v-model="assignment.done" />
+                    </label>
+                </li>
             </ul>
         </section>
     </div>
@@ -27,9 +29,9 @@
                 return {
                     assignments: [
                         { name: 'Make up bed', done: false },
-                        { name: 'Take a bath', done: false }, { name: 'Make up bed', done: false },
-                        { name: 'Eat breakfast', done: false }, { name: 'Make up bed', done: false },
-                        { name: 'Brush teeth', done: false }, { name: 'Make up bed', done: false },
+                        { name: 'Take a bath', done: false },
+                        { name: 'Eat breakfast', done: false },
+                        { name: 'Brush teeth', done: false },
                     ]
                 }
             }
