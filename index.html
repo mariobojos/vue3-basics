@@ -1,48 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02 - Attribute Binding and Event Handling</title>
+    <title>03 - Lists and Computed Properties</title>
     <script src="https://unpkg.com/vue@3"></script>
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            display: grid;
-            place-items: center;
-        }
-
-        .text-red {
-            color: red;
-        }
-
-        .text-green {
-            color: green;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="h-full grid place-items-center">
     <div id="app">
-        <button :class="active ? 'text-red' : 'text-green'" @click="toggle">Click Me</button>
+        <section>
+            <h2 class="font-bold mt-2">Assignment</h2>
+
+            <ul>
+                <li>Make up bed <input type="checkbox" /></li>
+                <li>Take a bath <input type="checkbox" /></li>
+                <li>East breakfast <input type="checkbox" /></li>
+                <li>Brush teeth <input type="checkbox" /></li>
+            </ul>
+        </section>
     </div>
 
     <script>
-        Vue.createApp({
+        let app = {
             data() {
                 return {
-                    active: false
-                }
-            },
-
-            methods: {
-                toggle() {
-                    this.active = ! this.active;
+                    assignments: [
+                        { name: 'Make up bed', done: false },
+                        { name: 'Take a bath', done: false }, { name: 'Make up bed', done: false },
+                        { name: 'Eat breakfast', done: false }, { name: 'Make up bed', done: false },
+                        { name: 'Brush teeth', done: false }, { name: 'Make up bed', done: false },
+                    ]
                 }
             }
-        }).mount('#app');
+        };
+
+        Vue.createApp(app).mount('#app');
     </script>
 </body>
 </html>
