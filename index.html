@@ -18,12 +18,17 @@
         let app = {
             components: {
                 'app-button': {
-                    mounted: function () {
-                        console.log('Hello again, World!');
+                    data() {
+                        return {
+                            processing: true
+                        }
                     },
 
                     template: `
-                    <button class="bg-green-800 text-yellow-100 hover:bg-green-600 rounded py-3 px-3">
+                    <button
+                        class="bg-green-800 text-yellow-100 hover:bg-green-600 disabled:bg-gray-400 rounded py-3 px-3"
+                        :disabled="processing"
+                    >
                         <slot />
                     </button>
                     `,
