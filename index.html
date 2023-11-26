@@ -10,10 +10,13 @@
 <body class="h-full grid place-items-center">
     <div id="app">
         <section>
-            <h2 class="font-bold mt-2">Assignment</h2>
+            <h2 class="font-bold mt-2">In-Progress Assignments</h2>
 
             <ul>
-                <li v-for="assignment in assignments">
+                <li
+                    v-for="assignment in assignments.filter(a => ! a.done)"
+                    :key="assignment.id"
+                >
                     <label>
                         {{ assignment.name }}
                         <input type="checkbox" v-model="assignment.done" />
@@ -21,6 +24,26 @@
                 </li>
             </ul>
         </section>
+
+        <section class="my-7">
+            <h2 class="font-bold mt-2">Finished Assignments</h2>
+
+            <ul>
+                <li
+                    v-for="assignment in assignments.filter(assignment => assignment.done)"
+                    :key="assignment.id"
+                >
+                    <label>
+                        {{ assignment.name }}
+                        <input type="checkbox" v-model="assignment.done" />
+                    </label>
+                </li>
+            </ul>
+        </section>
+
+        <pre>
+            {{ assignments }}
+        </pre>
     </div>
 
     <script>
@@ -28,12 +51,16 @@
             data() {
                 return {
                     assignments: [
-                        { name: 'Make up bed', done: false },
-                        { name: 'Take a bath', done: false },
-                        { name: 'Eat breakfast', done: false },
-                        { name: 'Brush teeth', done: false },
+                        { name: 'Make up bed', done: false, id: 1 },
+                        { name: 'Take a bath', done: false, id: 2 },
+                        { name: 'Eat breakfast', done: false, id: 3 },
+                        { name: 'Brush teeth', done: false, id: 4 },
                     ]
                 }
+            },
+
+            computed: {
+
             }
         };
 
