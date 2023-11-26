@@ -9,9 +9,9 @@
 </head>
 <body class="h-full grid place-items-center">
     <div id="app">
-        <app-button></app-button>
-        <app-button></app-button>
-        <app-button></app-button>
+        <app-button class="mx-2">Click Me</app-button>
+        <app-button class="mx-2">One more time</app-button>
+        <app-button class="mx-2">This is the last time</app-button>
     </div>
 
     <script>
@@ -19,11 +19,13 @@
             components: {
                 'app-button': {
                     mounted: function () {
-                        alert('Hello again, World!');
+                        console.log('Hello again, World!');
                     },
 
                     template: `
-                    <button>Click Me</button>
+                    <button class="bg-green-800 text-yellow-100 hover:bg-green-600 rounded py-3 px-3">
+                        <slot />
+                    </button>
                     `,
                 }
             }
