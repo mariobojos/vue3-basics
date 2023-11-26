@@ -3,16 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>04 - First Custom Component</title>
+    <title>064 - Component Props</title>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes spinner {
+            to {transform: rotate(360deg);}
+        }
+
+        .is-processing:before {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            margin-left: -10px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            border-top-color: #000;
+            animation: spinner .6s linear infinite;
+        }
+
+        .is-processing {
+            color: transparent;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body class="h-full grid place-items-center">
     <div id="app">
-        <app-button class="mx-2">Click Me</app-button>
-        <app-button type="secondary" class="mx-2">Secondary</app-button>
-        <app-button type="muted" class="mx-2">Muted</app-button>
-        <app-button type="warning" class="mx-2">Warning</app-button>
+        <div class="flex space-x-2">
+            <app-button>Click Me</app-button>
+            <app-button type="secondary">Secondary</app-button>
+            <app-button type="muted" :processing="true">Muted</app-button>
+            <app-button type="warning" :processing=true>Warning</app-button>
+        </div>
     </div>
 
     <script type="module">

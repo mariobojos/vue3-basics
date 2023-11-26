@@ -14,6 +14,7 @@ export default {
             'bg-pink-800 text-pink-100': type === 'secondary',
             'bg-amber-800 text-amber-100': type === 'warning',
             'bg-gray-800 text-gray-100': type === 'muted',
+            'is-processing': processing
             }"
             :disabled="processing"
         >
@@ -24,14 +25,12 @@ export default {
     props: {
         type: {
             type: String,
-            default: 'primary'
+            default: 'primary',
+        },
+
+        processing: {
+            type: Boolean,
+            default: false,
         }
     },
-
-    data() {
-        return {
-            processing: false
-        }
-    },
-
 }
