@@ -13,3 +13,4 @@ Covered so far:
 4. First Custom Component
 5. One Vue Custom Component per File (separate branch)
 6. Component Props (separate branch)
+7. Bringing it all together
