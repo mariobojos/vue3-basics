@@ -7,9 +7,10 @@ export default {
     },
 
     template: `
-        <assignment-list :assignments="inProgressAssignments" title="In Progress Assignments" />
-        
-        <assignment-list :assignments="completedAssignments" title="Completed Assignments" />
+        <section class="space-y-7">
+            <assignment-list :assignments="inProgressAssignments" title="In Progress Assignments" />
+            <assignment-list :assignments="completedAssignments" title="Completed Assignments" />
+        </section>
     `,
 
     data() {
