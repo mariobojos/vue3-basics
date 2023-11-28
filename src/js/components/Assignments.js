@@ -42,7 +42,8 @@ export default {
             this.assignments.push({
                name: assignmentName,
                done: false,
-               id: this.assignments.length + 1
+               id: this.assignments.length + 1,
+               tags: ['afternoon'],
             });
         },
     }
