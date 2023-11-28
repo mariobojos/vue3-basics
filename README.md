@@ -14,3 +14,5 @@ Covered so far:
 5. One Vue Custom Component per File (separate branch)
 6. Component Props (separate branch)
 7. Bringing it all together
+8. Handle a Form Submission
+9. Parent-Child State Communication ($emit)
