@@ -10,3 +10,9 @@ Covered so far:
 1. Introduction to Vue 3
 2. Attribute Binding and Event Handling
 3. List, Conditionals, and Computed Properties
+4. First Custom Component
+5. One Vue Custom Component per File (separate branch)
+6. Component Props (separate branch)
+7. Bringing it all together
+8. Handle a Form Submission
+9. Parent-Child State Communication ($emit)
