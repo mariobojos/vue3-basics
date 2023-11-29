@@ -14,25 +14,12 @@
         <app-button class="mx-2">This is the last time</app-button>
     </div>
 
-    <script>
+    <script type="module">
+        import AppButton from "./components/js/components/AppButton.js";
+
         let app = {
             components: {
-                'app-button': {
-                    data() {
-                        return {
-                            processing: true
-                        }
-                    },
-
-                    template: `
-                    <button
-                        class="bg-green-800 text-yellow-100 hover:bg-green-600 disabled:bg-gray-400 rounded py-3 px-3"
-                        :disabled="processing"
-                    >
-                        <slot />
-                    </button>
-                    `,
-                }
+                'app-button': AppButton,
             }
         };
 
