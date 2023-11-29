@@ -16,3 +16,5 @@ Covered so far:
 7. Bringing it all together
 8. Handle a Form Submission
 9. Parent-Child State Communication ($emit)
+10. Additional Functionalities
+11. Component Responsibility
