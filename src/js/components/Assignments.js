@@ -20,10 +20,10 @@ export default {
     data() {
         return {
             assignments: [
-                { name: 'Make up bed', done: false, id: 1 },
-                { name: 'Take a bath', done: false, id: 2 },
-                { name: 'Eat breakfast', done: false, id: 3 },
-                { name: 'Brush teeth', done: false, id: 4 },
+                { name: 'Make up bed', done: false, id: 1, tags: ['morning', 'evening'] },
+                { name: 'Take a bath', done: false, id: 2, tags: ['morning'] },
+                { name: 'Eat meal', done: false, id: 3, tags: ['morning', 'afternoon', 'evening'] },
+                { name: 'Brush teeth', done: false, id: 4, tags: ['morning', 'evening'] },
             ],
         }
     },
@@ -42,7 +42,8 @@ export default {
             this.assignments.push({
                name: assignmentName,
                done: false,
-               id: this.assignments.length + 1
+               id: this.assignments.length + 1,
+               tags: ['afternoon'],
             });
         },
     }
