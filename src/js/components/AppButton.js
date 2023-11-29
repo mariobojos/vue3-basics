@@ -1,5 +1,4 @@
 export default {
-
     /*
     NOTE:
     :class binding can hold a String, Object
