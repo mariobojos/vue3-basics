@@ -2,7 +2,7 @@ export default {
     template: `
        <div class="flex gap-2 mb-5">
             <button
-                @click="$emit('tag-change', tag)"
+                @click="$emit('update:currentTag', tag)"
                 class="border border-gray-400 rounded px-1 py text-xs" 
                 :class="{
                     'bg-gray-400 text-yellow': currentTag === tag,
