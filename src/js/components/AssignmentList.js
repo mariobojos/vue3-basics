@@ -9,14 +9,14 @@ export default {
     },
 
     template: `
-         <section v-show="show && assignments.length" class="w-72">
+         <section v-show="assignments.length" class="w-72">
             <div class="flex justify-between item-start">
                 <h2 class="font-bold mb-2">
                     {{ title }}
                     <span>({{ filteredAssignments.length }})</span>
                 </h2>
                 
-                <button v-show="canToggle" @click="show = false">&times;</button>    
+                <button v-show="canToggle" @click="$emit('toggle')">&times;</button>    
             </div>
             
             <assignment-tags 

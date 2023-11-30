@@ -10,17 +10,24 @@ export default {
 
     template: `
         <section class="flex gap-8">
-            <assignment-list :assignments="filters.inProgress" title="In Progresss" >
+            <assignment-list :assignments="filters.inProgress" title="In Progress" >
                 <assignment-create @add="add" />
             </assignment-list>
             
-            <assignment-list :assignments="filters.completed" title="Completed" can-toggle />
+            <assignment-list
+                v-if="showList" 
+                :assignments="filters.completed" 
+                title="Completed" 
+                can-toggle
+                @toggle="showList = !showList"     
+            />
         </section>
     `,
 
     data() {
         return {
             assignments: [],
+            showList: true
         }
     },
 
