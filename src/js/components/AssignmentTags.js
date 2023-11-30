@@ -5,7 +5,7 @@ export default {
                 @click="$emit('update:currentTag', tag)"
                 class="border border-gray-400 rounded px-1 py text-xs" 
                 :class="{
-                    'bg-gray-400 text-yellow': currentTag === tag,
+                    'bg-blue-700 text-blue-100': currentTag === tag,
                 }"
                 v-for="tag in tags" 
             >

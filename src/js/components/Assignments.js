@@ -19,12 +19,7 @@ export default {
 
     data() {
         return {
-            assignments: [
-                { name: 'Make up bed', done: false, id: 1, tags: ['morning', 'evening'] },
-                { name: 'Take a bath', done: false, id: 2, tags: ['morning'] },
-                { name: 'Eat meal', done: false, id: 3, tags: ['morning', 'afternoon', 'evening'] },
-                { name: 'Brush teeth', done: false, id: 4, tags: ['morning', 'evening'] },
-            ],
+            assignments: [],
         }
     },
 
@@ -37,6 +32,16 @@ export default {
         }
     },
 
+    created() {
+        fetch('http://localhost:3001/assignments') // I Promise to return something from that URL
+            .then(response => response.json()) // When I get the data, I Promise to return a JSON object
+            .then(assignments => {
+                // When I have a JSON object, do something
+                this.assignments = assignments;
+                console.table(assignments);
+            });
+    },
+
     methods: {
         add(assignmentName) {
             this.assignments.push({
@@ -46,6 +51,5 @@ export default {
                tags: ['afternoon'],
             });
         },
-    }
-
+    },
 }

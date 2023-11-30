@@ -25,3 +25,15 @@ Covered so far:
     * Separate each component to its own file
 12. A Deeper Look at v-model
     * A v-model is the combination of props `:value="sample"` and `@input="sample = @event.target.value"`
+13. Lifecycle Hooks, Fake APIs, and AJAX
+    * Fake API
+      - Run `npm install json-server --save-dev`
+      - Create file `db.json` at project root directory
+      - Start server `npx json-server db.json -p 3001`
+      - NOTE: Restart server after editing `db.json` file
+    * Common Vue Lifecycle hooks
+      - created
+      - mounted
+      - unmounted
+    * AJAX
+      - Use  `fetch` 
