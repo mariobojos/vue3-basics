@@ -38,3 +38,7 @@ Covered so far:
     * AJAX
       - Use  `fetch` 
 14. More Flexible Components with Slots and Flags
+    * Slot for custom content on a component
+    * Flags or toggle when showing/hiding content
+      * Child component - use event handling 
+      * Parent/Child component - use $emit

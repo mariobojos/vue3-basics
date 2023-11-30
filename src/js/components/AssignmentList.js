@@ -9,18 +9,22 @@ export default {
     },
 
     template: `
-         <section v-show="assignments.length" class="w-70">
-            <h2 class="font-bold my-2">
-                {{ title }}
-                <span>({{ filteredAssignments.length }})</span>
-            </h2>
+         <section v-show="show && assignments.length" class="w-72">
+            <div class="flex justify-between item-start">
+                <h2 class="font-bold mb-2">
+                    {{ title }}
+                    <span>({{ filteredAssignments.length }})</span>
+                </h2>
+                
+                <button v-show="canToggle" @click="show = false">&times;</button>    
+            </div>
             
             <assignment-tags 
                 :initial-tags="assignments.map(a => a.tags).flat()"
                 v-model:currentTag="currentTag"
             ></assignment-tags>
             
-            <ul class="border border-gray-400 rounded divide-y divide-gray-400">
+            <ul class="border border-gray-400 rounded divide-y divide-gray-400 mt-6">
                 <assignment 
                     v-for="assignment in filteredAssignments" 
                     :key="assignment.id" 
@@ -35,11 +39,13 @@ export default {
     props: {
         assignments: Array,
         title: String,
+        canToggle: { type: Boolean, default: false }
     },
 
     data() {
         return {
             currentTag: 'all',
+            show: true
         };
     },
 

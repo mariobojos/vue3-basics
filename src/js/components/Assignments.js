@@ -10,11 +10,11 @@ export default {
 
     template: `
         <section class="flex gap-8">
-            <assignment-list :assignments="filters.inProgress" title="In Progress Assignments">
+            <assignment-list :assignments="filters.inProgress" title="In Progresss" >
                 <assignment-create @add="add" />
             </assignment-list>
             
-            <assignment-list :assignments="filters.completed" title="Completed Assignments" />
+            <assignment-list :assignments="filters.completed" title="Completed" can-toggle />
         </section>
     `,
 
