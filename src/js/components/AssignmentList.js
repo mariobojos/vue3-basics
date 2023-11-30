@@ -9,7 +9,7 @@ export default {
     },
 
     template: `
-         <section v-show="assignments.length">
+         <section v-show="assignments.length" class="w-70">
             <h2 class="font-bold my-2">
                 {{ title }}
                 <span>({{ filteredAssignments.length }})</span>
@@ -27,6 +27,8 @@ export default {
                     :assignment="assignment"
                 ></assignment>
             </ul>
+            
+            <slot></slot>
         </section>
     `,
 

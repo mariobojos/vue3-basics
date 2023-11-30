@@ -9,12 +9,13 @@ export default {
     },
 
     template: `
-        <section class="space-y-7">
-            <assignment-list :assignments="filters.inProgress" title="In Progress Assignments" />
+        <section class="flex gap-8">
+            <assignment-list :assignments="filters.inProgress" title="In Progress Assignments">
+                <assignment-create @add="add" />
+            </assignment-list>
+            
             <assignment-list :assignments="filters.completed" title="Completed Assignments" />
-            <assignment-create @add="add" />
         </section>
-        
     `,
 
     data() {

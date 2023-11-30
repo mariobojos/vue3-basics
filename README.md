@@ -37,3 +37,4 @@ Covered so far:
       - unmounted
     * AJAX
       - Use  `fetch` 
+14. More Flexible Components with Slots and Flags
