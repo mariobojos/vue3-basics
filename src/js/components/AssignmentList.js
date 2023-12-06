@@ -9,7 +9,7 @@ export default {
     },
 
     template: `
-         <section v-show="assignments.length" class="w-72">
+         <section v-show="assignments.length" class="w-72  bg-gray-900 p-4 border border-gray-800 rounded-lg">
             <div class="flex justify-between item-start">
                 <h2 class="font-bold mb-2">
                     {{ title }}

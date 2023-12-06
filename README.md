@@ -42,3 +42,7 @@ Covered so far:
     * Flags or toggle when showing/hiding content
       * Child component - use event handling 
       * Parent/Child component - use $emit
+15. Named Slots
+    * Default slot
+    * Named slot
+    * Shortcut for slot is # (hashtag)

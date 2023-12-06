@@ -5,7 +5,8 @@ export default {
                 <input 
                     v-model="newAssignment" 
                     type="text" 
-                    class="bg-white py-2 pl-2 pr-4" 
+                    style="width: 13rem;"
+                    class="bg-white p-2" 
                     placeholder="New assignment..." />
                 <button type="submit" class="bg-white p-2 border-l">Add</button>
             </div>
