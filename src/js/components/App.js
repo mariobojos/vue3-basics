@@ -11,7 +11,15 @@ export default {
     template: `
         <div class="grid gap-6">
             <assignments />
-            <panel heading="Hello, World!"></panel>
+            <panel>
+                <template v-slot:heading>
+                    Heading entry slot
+                    <p>Hello, World!</p>
+                </template>
+                <template v-slot:default>
+                    Default entry slot
+                </template>                
+            </panel>
         </div>
     `,
 
