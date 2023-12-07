@@ -12,7 +12,7 @@ export default {
         <div class="grid gap-6">
             <assignments />
             
-            <panel>
+            <panel theme="light">
                 <template v-slot:heading>
                     Heading Slot used here.
                     <p>Hello, World!</p>
@@ -25,7 +25,7 @@ export default {
                 </template>                      
             </panel>
             
-            <panel>
+            <panel theme="dark">
                 <strong>No Heading Slot used.</strong>                
                 <p>Default Slot entry still works.</p>                                
             </panel>
