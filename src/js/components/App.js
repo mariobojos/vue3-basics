@@ -11,14 +11,29 @@ export default {
     template: `
         <div class="grid gap-6">
             <assignments />
+            
             <panel>
                 <template v-slot:heading>
-                    Heading entry slot
+                    Heading Slot used here.
                     <p>Hello, World!</p>
                 </template>
-                <template v-slot:default>
-                    Default entry slot
-                </template>                
+                
+                Default Slot entry still works.          
+                
+                <template #footer>
+                    Footer Slot entry here.
+                </template>                      
+            </panel>
+            
+            <panel>
+                <strong>No Heading Slot used.</strong>                
+                <p>Default Slot entry still works.</p>                                
+            </panel>
+            
+            <panel>
+                <template #heading>Heading Slot</template>                                
+                <p>Default Slot entry still works.</p>    
+                <template #footer>Footer here</template>                            
             </panel>
         </div>
     `,
